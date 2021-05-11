@@ -1,8 +1,8 @@
 .zone {
-    padding:30px 50px;
-    margin:40px 60px;
+    /* padding:30px 50px;
+    margin:40px 60px; */
     cursor:pointer;
-    display:inline-block;
+    /* display:inline-block; */
     color:#FFF;
     font-size:2em;
     border-radius:4px;
@@ -68,4 +68,94 @@
     background: -o-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* Opera 11.10+ */
     background: -ms-linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* IE10+ */
     background: linear-gradient(top, #7abcff 0%,#60abf8 44%,#4096ee 100%); /* W3C */
+}
+
+
+/***********************************************************************
+ *  The work for changing layout begins here
+ **********************************************************************/
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Arial;
+}
+
+/* NAV */
+.main-nav {
+	display: flex;
+	flex-flow: row nowrap;
+	list-style: none;
+	font-size: 0.7em;
+	margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+	.main-nav {
+		font-size: 0.5em;
+		padding: 0;
+	}
+}
+
+.push {
+	margin-left: auto;
+}
+
+li {
+	padding: 20px;
+}
+
+a {
+	color: white;
+	text-decoration: none;
+}
+
+.sticky {
+	position: fixed;
+	top: 0;
+	width: 100%;
+}
+
+/* COVER */
+.container {
+	/* These 3 below lines horizontally and vertically center. */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 50vh;
+}
+
+/* GRID */
+.grid-wrapper {
+	display: grid;
+	gap: 20px;
+	grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+
+}
+
+.box > img {
+	width: 100%;
+}
+
+.box {
+	background-color: #444;
+	padding: 130px;
+	margin: 20px;
+}
+
+.box:nth-child(even):hover {
+    -webkit-transform: rotate(-7deg);
+    -moz-transform:rotate(-7deg);
+    -o-transform:rotate(-7deg);
+    transform:rotate(-7deg);
+}
+.box:nth-child(odd):hover {
+    -webkit-transform: rotate(7deg);
+    -moz-transform:rotate(7deg);
+    -o-transform:rotate(7deg);
+    transform:rotate(7deg);
+}
+
+footer {
+	text-align: center;
 }
